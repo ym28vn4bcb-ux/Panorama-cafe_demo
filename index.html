@@ -1,53 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panorama Cafe | Menu</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="page-shell">
-    <header class="topbar">
-      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
-      <div class="brand-mini"><img src="assets/logo-emblem.png" alt="Panorama logo"><span>PANORAMA<br><small>CAFE</small></span></div>
-      <div class="top-actions"><button class="lang-btn" id="langBtn">عربي</button><button class="icon-btn">⌕</button></div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-photo"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <img class="hero-logo" src="assets/logo-emblem.png" alt="Panorama logo">
-          <p class="eyebrow">PANORAMA CAFE</p>
-          <h1 data-en="Good Food, Better Mood" data-ar="أكل زاكي، جلسة أحلى">Good Food, Better Mood</h1>
-          <p class="hero-sub" data-en="A beautiful view. A better moment." data-ar="إطلالة حلوة، ولحظة أحلى">A beautiful view. A better moment.</p>
-        </div>
-        <div class="hero-buttons">
-          <a href="#menu" class="action-card"><span>▤</span><b data-en="View Menu" data-ar="تصفح المنيو">View Menu</b><small data-en="تصفح المنيو" data-ar="View Menu">تصفح المنيو</small></a>
-          <a href="https://maps.google.com/?q=Panorama+cafe+Jordan+Zarqa" target="_blank" class="action-card"><span>⌖</span><b data-en="Our Location" data-ar="موقعنا">Our Location</b><small data-en="موقعنا" data-ar="Our Location">موقعنا</small></a>
-          <a href="https://share.google/nE58Pz4CIP8kyiqSB" target="_blank" class="action-card"><span>☆</span><b data-en="Rate Us" data-ar="قيّمنا">Rate Us</b><small data-en="قيّمنا على جوجل" data-ar="Rate us on Google">قيّمنا على جوجل</small></a>
-          <a href="https://wa.me/962779970924" target="_blank" class="action-card"><span>◔</span><b data-en="Contact Us" data-ar="تواصل معنا">Contact Us</b><small data-en="تواصل معنا" data-ar="Contact Us">تواصل معنا</small></a>
-        </div>
-      </section>
-
-      <section class="section" id="menu">
-        <div class="section-heading"><p class="eyebrow">PANORAMA</p><h2 data-en="Our Menu" data-ar="قائمة الطعام">Our Menu</h2><p data-en="Choose a category" data-ar="اختاري القسم">Choose a category</p></div>
-        <div class="categories" id="categories"></div>
-      </section>
-
-      <section class="section hidden" id="itemsSection">
-        <button class="back-btn" id="backBtn">‹ <span data-en="Back to Menu" data-ar="العودة للمنيو">Back to Menu</span></button>
-        <div class="section-heading"><p class="eyebrow" id="categoryEyebrow">PANORAMA</p><h2 id="itemsTitle">Cold Drinks</h2><p id="itemsArabic">المشروبات الباردة</p></div>
-        <div class="items" id="items"></div>
-      </section>
-    </main>
-
-    <footer><p>PANORAMA CAFE</p><small data-en="More Than A Cafe" data-ar="أكثر من مجرد كافيه">More Than A Cafe</small></footer>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Panorama Cafe</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="app">
+<header class="hero" id="home"><img class="watermark" src="assets/logo-emblem.png"><div class="top"><button id="lang" onclick="toggleLang()">EN</button><button class="menu">☰</button></div><img class="brandLogo" src="assets/logo-emblem.png"><p class="eyebrow">PANORAMA CAFE</p><h1 id="brand">بانوراما كافيه</h1><p id="tag">GOOD COFFEE · BRIGHTER MOMENTS</p><div class="heroBtns"><a href="#categories" id="view">تصفح المنيو</a><a href="https://maps.google.com/?q=Panorama+Cafe+Jordan" target="_blank" id="place">موقعنا 📍</a></div></header>
+<section class="intro"><h2 id="menuTitle">قائمة الطعام</h2><p id="introText">اختاروا القسم واستمتعوا بتجربة منيو إلكترونية سهلة وأنيقة.</p></section>
+<section class="categories" id="categories"><button data-cat="hot">☕<span>مشروبات ساخنة</span><small>Hot Drinks</small></button><button data-cat="cold">🧊<span>مشروبات باردة</span><small>Cold Drinks</small></button><button data-cat="juice">🍹<span>عصائر وموهيتو</span><small>Juices & Mojitos</small></button><button data-cat="dessert">🍰<span>الحلويات</span><small>Desserts</small></button><button data-cat="snack">🍟<span>المقبلات والسناكات</span><small>Snacks</small></button><button data-cat="shisha">💨<span>الأراجيل</span><small>Shisha</small></button></section>
+<section class="menuPanel" id="menuPanel"><div class="panelHead"><button onclick="closeMenu()">×</button><div><h2 id="sectionTitle">اختاروا قسمًا</h2><p id="sectionSub">Demo Menu</p></div></div><div id="items"></div></section>
+<section class="actions"><a href="https://maps.google.com/?q=Panorama+Cafe+Jordan" target="_blank" id="location">📍 موقعنا</a><a href="tel:0779970924" id="call">📞 تواصل معنا</a><a href="#" onclick="alert('رابط التقييم يُضاف عند اعتماد الرابط الرسمي من الكافيه');return false" id="rate">⭐ قيّمنا</a></section>
+<footer><img src="assets/logo-emblem.png"><p>MORE THAN A CAFE</p><span id="footerText">مكانكم المفضل للاسترخاء</span></footer>
+</div><script src="script.js"></script></body></html>
