@@ -1,25 +1,21 @@
-const cats=[
- ["☕","HOT DRINKS","المشروبات الساخنة"],
- ["🥤","COLD DRINKS","المشروبات الباردة"],
- ["🍽","FOOD","المأكولات"],
- ["🍰","DESSERTS","الحلويات"],
- ["♨","SHISHA","الأراجيل"],
- ["✦","SPECIAL ITEMS","الأصناف المميزة"]
+const categories = [
+{icon:'☕', ar:'المشروبات الساخنة', en:'Hot Drinks', items:[
+['قهوة تركي / سنجل','Turkish Coffee / Single',1.75],['قهوة تركي / دبل','Turkish Coffee / Double',2.25],['اسبريسو / سنجل','Espresso / Single',2],['اسبريسو / دبل','Espresso / Double',2.5],['امريكانو','Americano',2.5],['لاتيه','Latte',2.5],['لاتيه كراميل','Caramel Latte',2.75],['لاتيه فانيلا','Vanilla Latte',2.5],['لاتيه شوكليت','Chocolate Latte',2.5],['موكا كراميل','Caramel Mocha',2.5],['موكا دارك','Dark Mocha',2.5],['كابتشينو','Cappuccino',3],['هوت شوكليت','Hot Chocolate',3],['نسكافيه 3X1','Nescafe 3X1',2],['نسكافيه بلاك','Nescafe Black',2.5],['نسكافيه بلاك مع حليب','Nescafe Black with Milk',3],['شاي','Tea',1.5],['شاي كرك','Karak Tea',2.5],['أعشاب','Herbal Tea',1.5],['سحلب (موسمي)','Sahlab (Seasonal)',3],['فلات وايت','Flat White',2],['اسبريسو ميكاتو','Espresso Macchiato',2],['لاتيه لوتس','Lotus Latte',3],['كوفي كريم','Coffee Cream',2.5],['اورانج امريكانو','Orange Americano',2.5]]},
+{icon:'🍹', ar:'كوكتيل وعصائر طبيعية', en:'Cocktails & Fresh Juices', items:[
+['كوكتيل الشرق','Al Sharq Cocktail',4],['موز وحليب','Banana Milk',3],['موز وحليب وفراولة','Banana, Milk & Strawberry',3],['موز وفراولة','Banana & Strawberry',2.75],['موز وفراولة ومانجا (بدون حليب)','Banana, Strawberry & Mango (No Milk)',1.75],['مانجا','Mango',3],['عصير ليمون','Lemon Juice',2.75],['عصير برتقال','Orange Juice',2.75],['برتقال وفراولة','Orange & Strawberry',3.5],['عصير ليمون وبرتقال وزنجبيل','Lemon, Orange & Ginger',3],['كيوي','Kiwi',3.25],['كيوي وفراولة','Kiwi & Strawberry',3.75],['كيوي وليمون','Kiwi & Lemon',3.75],['كيوي ومانجا','Kiwi & Mango',3],['كيوي ونعنع','Kiwi & Mint',3],['ليمون ونعنع','Lemon & Mint',3.25],['أناناس سموذي','Pineapple Smoothie',3],['موز ومانجا وباشن','Banana, Mango & Passion Fruit',3],['أفوكادو','Avocado',4.5],['أفوكادو ومانجا','Avocado & Mango',4.5],['أفوكادو وموز وحليب','Avocado, Banana & Milk',3.5],['دايت','Diet Juice',3.5]]},
+{icon:'🥤', ar:'موكتيل وسموذي', en:'Mocktail & Smoothie', items:[
+['مكس الشرق','Al Sharq Mix',4],['مكس بيري','Berry Mix',3],['مكس لافندر','Lavender Mix',3],['باشن فروت','Passion Fruit',3],['باشن ومانجا','Passion & Mango',3],['باشن وخوخ','Passion & Peach',3],['خوخ ومانجا','Peach & Mango',3],['بينا كولادا','Pina Colada',3],['جرينادين','Grenadine',3],['بلوهوايان','Blue Hawaiian',3],['موهيتو','Mojito',3]]},
+{icon:'♨', ar:'الأراجيل', en:'Shisha', items:[
+['أرجيلة الشرق','Al Sharq Shisha',5],['أرجيلة النخلة','Palm Shisha',5],['أرجيلة تفاحتين مزايا','Mazaaya Double Apple',4],['أرجيلة ليمون ونعنع','Lemon & Mint',4],['أرجيلة علكة وقرفة','Gum & Cinnamon',4],['أرجيلة بطيخ ونعنع','Watermelon & Mint',4],['أرجيلة كندي','Candy Shisha',4],['أرجيلة بوبيري','Blueberry',4],['أرجيلة علكة سهم','Sahm Gum',4],['أرجيلة LOVE','LOVE Shisha',4],['أرجيلة علكة ونعنع','Gum & Mint',4],['أرجيلة مانجا ودراق','Mango & Peach',4],['أرجيلة عنب وتوت','Grape & Berry',4],['تغيير الرأس','Head Replacement',2],['خدمة الأرجيل','Shisha Service',3]]},
+{icon:'🍰', ar:'ميلك شيك ومشروبات غازية وسناكس', en:'Milkshake, Soft Drinks & Snacks', items:[
+['ميلك شيك عربية','Arabic Milkshake',4],['ميلك شيك لوتس','Lotus Milkshake',4],['ميلك شيك أوريو','Oreo Milkshake',4],['ميلك شيك سنيكرز','Snickers Milkshake',4],['ميلك شيك شوكليت','Chocolate Milkshake',4],['ميلك شيك فراولة','Strawberry Milkshake',4],['مياه معدنية','Mineral Water',0.5],['مشروبات غازية','Soft Drinks',1.5],['بوم بوم','Boom Boom',1.75],['بوم بوم مع نكهة','Boom Boom with Flavor',3],['ريد بول','Red Bull',2.75],['ريد بول مع نكهة','Red Bull with Flavor',3.75],['مكسرات','Mixed Nuts',3],['بوشار','Popcorn',1],['ذرة','Corn',1.5]]},
+{icon:'🧊', ar:'آيس كوفي', en:'Ice Coffee', items:[
+['آيس لاتيه فانيلا','Iced Vanilla Latte',3],['آيس لاتيه شوكليت','Iced Chocolate Latte',3],['آيس كراميل ميكاتو','Iced Caramel Macchiato',3],['آيس كوفي كلاسيك','Classic Iced Coffee',2.5],['آيس كوفي الشرق سموذي','Al Sharq Iced Coffee Smoothie',3],['آيس موكا كراميل','Iced Caramel Mocha',3],['آيس موكا دارك','Iced Dark Mocha',3],['آيس كابتشينو','Iced Cappuccino',3.5],['فرابتشينو كراميل','Caramel Frappuccino',4],['فرابتشينو شوكليت','Chocolate Frappuccino',4],['فرابتشينو بتاشيو','Pistachio Frappuccino',4],['آيس اسبريسو فريدو','Iced Espresso Freddo',2.5],['آيس أمريكانو','Iced Americano',2.5],['آيس لاتيه لوتس','Iced Lotus Latte',3],['آيس لاتيه ستروبيري','Iced Strawberry Latte',3],['آيس كوكوت سبانش لاتيه','Iced Coconut Spanish Latte',3],['أفوكاتو','Affogato',3.5]]}
 ];
 let en=false;
-const grid=document.getElementById("categories");
-function draw(){
- grid.innerHTML=cats.map((c,i)=>`<article class="card" onclick="openDemo(${i})">
-   <div class="icon">${c[0]}</div>
-   <div class="card-title">${en?c[1]:c[2]}</div>
-   <div class="demo-box"><div>${en?"Demo Content":"محتوى تجريبي"}<small>${en?"(Demo Content)":"(Demo Content)"}</small><div class="dash">—</div></div></div>
- </article>`).join("");
-}
-function openDemo(i){
- const c=cats[i];
- const m=document.createElement("div");m.className="modal open";
- m.innerHTML=`<div class="modal-card"><div class="icon">${c[0]}</div><h2>${en?c[1]:c[2]}</h2><p style="color:#aaa;line-height:1.8">${en?"This section is demo content and will be replaced with the official menu items.":"هذا القسم تجريبي، وسيتم استبدال المحتوى بأصناف المنيو الرسمي عند اعتماده."}</p><button class="close" onclick="this.closest('.modal').remove()">${en?"Close":"إغلاق"}</button></div>`;
- document.body.appendChild(m);
-}
-function toggleLang(){en=!en;draw()}
+const grid=document.getElementById('categories');
+function draw(){grid.innerHTML=categories.map((c,i)=>`<article class="card" onclick="openCategory(${i})"><div class="icon">${c.icon}</div><div class="card-title">${en?c.en:c.ar}</div><div class="demo-box"><strong>${c.items.length} ${en?'items':'صنف'}</strong><span>${en?'View menu & prices':'عرض الأصناف والأسعار'}</span><div class="dash">⌄</div></div></article>`).join('');document.documentElement.dir=en?'ltr':'rtl';document.getElementById('menuHeading').textContent=en?'Our Menu':'قائمة الطعام';document.getElementById('menuSub').textContent=en?'Choose a category to view items and prices':'اختاري القسم لعرض الأصناف والأسعار';document.getElementById('reviewTitle').textContent=en?'Rate us on Google ⭐':'قيّمنا على Google ⭐';document.getElementById('reviewText').textContent=en?'Your feedback means a lot to us':'رأيك بيسعدنا وبدعمنا دائمًا';document.getElementById('reviewButton').textContent=en?'Open review':'افتح التقييم';}
+function openCategory(i){const c=categories[i];const rows=c.items.map(x=>`<div class="item"><div><b>${en?x[1]:x[0]}</b><small>${en?x[0]:x[1]}</small></div><strong>${x[2].toFixed(2)} JD</strong></div>`).join('');const m=document.createElement('div');m.className='modal open';m.innerHTML=`<div class="modal-card"><button class="x" onclick="this.closest('.modal').remove()">×</button><div class="icon">${c.icon}</div><h2>${en?c.en:c.ar}</h2><div class="items">${rows}</div><button class="close" onclick="this.closest('.modal').remove()">${en?'Close':'إغلاق'}</button></div>`;document.body.appendChild(m);}
+function toggleLang(){en=!en;draw();}
+function scrollToCategories(){document.getElementById('categories').scrollIntoView({behavior:'smooth'});}
 draw();
