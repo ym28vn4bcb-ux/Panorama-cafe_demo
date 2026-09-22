@@ -1,26 +1,53 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Panorama Cafe — Digital Menu</title><link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panorama Cafe | Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="page">
-<header class="hero">
-  <button class="menu-btn" aria-label="Menu" onclick="scrollToCategories()">☰</button>
-  <button class="lang-btn" onclick="toggleLang()">ع / EN</button>
-  <div class="brand"><div class="mountain">⌃⌃⌃</div><h1>PANORAMA</h1><div class="cafe">CAFE</div><div class="tag">GOOD FOOD <span>•</span> BETTER VIEWS</div></div>
-</header>
-<main>
-  <section class="welcome"><h2 id="menuHeading">قائمة الطعام</h2><p id="menuSub">اختاري القسم لعرض الأصناف والأسعار</p></section>
-  <section class="grid" id="categories"></section>
-  <section class="quick-links">
-    <a href="https://www.instagram.com/panoramacafe_jo?stkn=Z25ndXBkM3I5ZHU3" target="_blank">◎ Instagram</a>
-    <a href="https://www.facebook.com/share/1BGKZZVhKh/?mibextid=wwXIfr" target="_blank">f Facebook</a>
-    <a href="https://search.google.com/local/writereview?placeid=ChIJ02BBfvlvGxURbjp4JILR6vE" target="_blank">★ قيّمنا على Google</a>
-  </section>
-  <section class="review-card"><div><h3 id="reviewTitle">قيّمنا على Google ⭐</h3><p id="reviewText">رأيك بيسعدنا وبدعمنا دائمًا</p><a class="review-btn" href="https://search.google.com/local/writereview?placeid=ChIJ02BBfvlvGxURbjp4JILR6vE" target="_blank" id="reviewButton">افتح التقييم</a></div></section>
-  <section class="footer-brand"><div class="spark">✦</div><div class="script">More Than a Cafe</div><div class="line"></div><div class="small">A PLACE TO RELAX</div></section>
-</main></div>
-<script src="script.js"></script>
-</body></html>
+  <div class="page-shell">
+    <header class="topbar">
+      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <div class="brand-mini"><img src="assets/logo-emblem.png" alt="Panorama logo"><span>PANORAMA<br><small>CAFE</small></span></div>
+      <div class="top-actions"><button class="lang-btn" id="langBtn">عربي</button><button class="icon-btn">⌕</button></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-photo"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <img class="hero-logo" src="assets/logo-emblem.png" alt="Panorama logo">
+          <p class="eyebrow">PANORAMA CAFE</p>
+          <h1 data-en="Good Food, Better Mood" data-ar="أكل زاكي، جلسة أحلى">Good Food, Better Mood</h1>
+          <p class="hero-sub" data-en="A beautiful view. A better moment." data-ar="إطلالة حلوة، ولحظة أحلى">A beautiful view. A better moment.</p>
+        </div>
+        <div class="hero-buttons">
+          <a href="#menu" class="action-card"><span>▤</span><b data-en="View Menu" data-ar="تصفح المنيو">View Menu</b><small data-en="تصفح المنيو" data-ar="View Menu">تصفح المنيو</small></a>
+          <a href="https://maps.google.com/?q=Panorama+cafe+Jordan+Zarqa" target="_blank" class="action-card"><span>⌖</span><b data-en="Our Location" data-ar="موقعنا">Our Location</b><small data-en="موقعنا" data-ar="Our Location">موقعنا</small></a>
+          <a href="https://share.google/nE58Pz4CIP8kyiqSB" target="_blank" class="action-card"><span>☆</span><b data-en="Rate Us" data-ar="قيّمنا">Rate Us</b><small data-en="قيّمنا على جوجل" data-ar="Rate us on Google">قيّمنا على جوجل</small></a>
+          <a href="https://wa.me/962779970924" target="_blank" class="action-card"><span>◔</span><b data-en="Contact Us" data-ar="تواصل معنا">Contact Us</b><small data-en="تواصل معنا" data-ar="Contact Us">تواصل معنا</small></a>
+        </div>
+      </section>
+
+      <section class="section" id="menu">
+        <div class="section-heading"><p class="eyebrow">PANORAMA</p><h2 data-en="Our Menu" data-ar="قائمة الطعام">Our Menu</h2><p data-en="Choose a category" data-ar="اختاري القسم">Choose a category</p></div>
+        <div class="categories" id="categories"></div>
+      </section>
+
+      <section class="section hidden" id="itemsSection">
+        <button class="back-btn" id="backBtn">‹ <span data-en="Back to Menu" data-ar="العودة للمنيو">Back to Menu</span></button>
+        <div class="section-heading"><p class="eyebrow" id="categoryEyebrow">PANORAMA</p><h2 id="itemsTitle">Cold Drinks</h2><p id="itemsArabic">المشروبات الباردة</p></div>
+        <div class="items" id="items"></div>
+      </section>
+    </main>
+
+    <footer><p>PANORAMA CAFE</p><small data-en="More Than A Cafe" data-ar="أكثر من مجرد كافيه">More Than A Cafe</small></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
